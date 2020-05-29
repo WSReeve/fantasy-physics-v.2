@@ -1,1 +1,1 @@
-# fantasy-physics-v.2
+# This is the repo for the Fantasy Physics website
