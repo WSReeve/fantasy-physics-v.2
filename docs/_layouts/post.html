@@ -1,0 +1,45 @@
+---
+---
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Open+Sans&display=swap');
+    h1, h2, h3 {
+        font-family: 'Maven Pro', sans-serif;
+    }
+    a, p, ul li, ol li, h4, h5, h6 {
+        font-family: 'Open Sans', sans-serif;
+    }
+    a, p, ul li, ol li {
+        font-size: 1.0rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+    main {
+        float:right;
+        width: 75%;
+        min-height: 400px;
+    }
+    aside {
+        float: left;
+        width: 20%;
+        min-height: 400px;
+    }
+</style>
+
+<div class = "container">
+    <main>
+        {{content}}
+
+    </main>
+    <aside>
+        <h3>News and Updates</h3>
+        {% for post in site.posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </aside>
+</div>
+
