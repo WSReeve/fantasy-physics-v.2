@@ -2,123 +2,96 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-  }
-  
-  section {
+}
+
+section {
     height: 100%;
-  }
-  
-  .bg-image {
+}
+
+.bg-image{
     width: 100%;
     height: 1320px;
-    background: url("../img/higgsboson.jpg");
+    background: url('../img/higgsboson.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-  
-  .gradient {
+}
+
+.gradient{
     width: 100%;
     height: 100%;
     position: absolute;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+1,1+10,0+100 */
-    /* FF3.6-15 */
-    /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(1%, black), color-stop(10%, black), to(rgba(0, 0, 0, 0)));
-    background: linear-gradient(to bottom, black 0%, black 1%, black 10%, rgba(0, 0, 0, 0) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
-    /* IE6-9 */
-  }
-  
-  .container {
+    background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+.container{
     width: 85%;
     height: 700px;
     position: relative;
     margin: 0 auto;
-  }
-  
-  .header {
+}
+
+.header{
     width: 100%;
     padding: 20px;
-  }
-  
-  .logo > a {
+}
+
+.logo>a{
     text-decoration: none;
     font-weight: bold;
-    color: #fff;
+    color:#fff;
     font-family: 'Maven Pro', sans-serif;
     font-size: 35px;
     position: absolute;
     padding: 20px;
-  }
+}
 
-  nav {
-      text-align: center;
-      padding: 20px;
-  }
-  
-  nav > ul {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
+nav>ul{
     position: absolute;
     right: 20px;
-  }
-  
-  nav > ul > li {
+}
+
+nav>ul>li{
     list-style: none;
     float: left;
     height: 40px;
     line-height: 40px;
-    cursor: pointer;
-  }
-  
-  nav > ul > li > a {
+}
+
+nav>ul>li>a{
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
     padding: 0 20px 0 20px;
-  }
-  
-  ul.drop-menu {
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    width: 50%;
-    padding: 0;
-  }
-  
-  ul.drop-menu li {
+}
+
+ul.drop-menu {
+ position: absolute;
+ top: 100%;
+ left: 0%;
+ width: 100%;
+ padding: 0;
+}
+
+ul.drop-menu li {
     background: #666;
-  }
-  
-  ul.drop-menu li:hover {
-    background: #606060;
-  }
-  
-  ul.drop-menu li:last-child {
-    border-radius: 0px 0px 5px 5px;
-  }
-
-  ul.drop-menu li {
-    display: none;
-  }
-
-  li:hover > ul.drop-menu li {
-    display: block;
-  }
-
-  ul.drop-menu li > a {
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
     color: #fff;
-    font-size: 14px;
-  }
-  
-  .main-btns {
+}
+ul.drop-menu li:hover {
+    background: #606060;
+}
+ul.drop-menu li:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+.main-btns{
     width: 70%;
     height: 300px;
     position: absolute;
@@ -128,12 +101,12 @@ body {
     right: 0;
     bottom: auto;
     left: 0;
-  }
-  
-  .btn-gs {
+}
+
+.btn-gs{
     width: 45%;
     height: 120px;
-    background-color: #6a21e0;
+    background-color: rgb(106, 33, 224);
     font-size: 25px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
@@ -141,12 +114,12 @@ body {
     border-radius: 10px;
     color: #fff;
     margin: 1%;
-  }
-  
-  .btn-lm {
+    
+}
+.btn-lm{
     width: 45%;
     height: 120px;
-    background-color: #5f0ae7;
+    background-color: rgb(95, 10, 231);
     font-size: 25px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
@@ -154,12 +127,11 @@ body {
     border-radius: 10px;
     color: #fff;
     margin: 1%;
-  }
-  
-  .btn-li {
+}
+.btn-li{
     width: 93%;
     height: 80px;
-    background-color: #5f0ae7;
+    background-color: rgb(95, 10, 231);
     font-size: 20px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
@@ -167,4 +139,4 @@ body {
     border-radius: 10px;
     color: #fff;
     margin: 1%;
-  }
+}
