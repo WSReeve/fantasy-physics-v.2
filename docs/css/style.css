@@ -87,6 +87,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     font-weight: bold;
     padding: 0 20px 0 20px;
   }
+
+
+    .sign-in {
+      color: #34D171;
+  }
   
   ul.drop-menu {
     position: relative;
@@ -235,21 +240,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     font-size: 14px;
   }
   
+  .welcome-h {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    padding: 20px;
+    padding-bottom: 0;
+    font-size: 4em;
+    position: relative;
+    margin-right: 15%;
+
+  }
+
+  .welcome-p {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 30px;
+    position: relative;
+    padding-left: 20px;
+    margin-right: 40%;
+    margin-left: 5%;
+
+}
+
   .main-btns {
     width: 70%;
-    height: 300px;
-    position: absolute;
+    height: 50%;
+    position: relative;
     text-align: center;
     margin: auto;
-    top: 30%;
+    top: 20%;
     right: 0;
     bottom: auto;
     left: 0;
   }
   
-  .btn-gs {
+  .main-btns > button {
     width: 45%;
-    height: 120px;
+    height: 45%;
     background-color: #6a21e0;
     font-size: 25px;
     font-weight: bold;
@@ -260,28 +287,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     margin: 1%;
   }
   
-  .btn-lm {
-    width: 45%;
-    height: 120px;
-    background-color: #5f0ae7;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    margin: 1%;
-  }
   
-  .btn-li {
-    width: 93%;
-    height: 80px;
-    background-color: #5f0ae7;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    margin: 1%;
-  }
