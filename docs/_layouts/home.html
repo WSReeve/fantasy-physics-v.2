@@ -19,12 +19,12 @@
             <div class="gradient"></div>
             <div class="container">
                 <div class="scroll logo" data-ratey="0.7" data-ratex='-1.5'><a href="{{ site.baseurl }}/">Fantasy Physics</a></div>
-                <div class="header">
+                <div class="header header--1">
                     <nav>
                         <ul>
                             <li class="scroll" data-ratey=".7" data-ratex="1.8"><a href="{{ site.baseurl }}">Get Started</a></li>
                             <li class="scroll" data-ratey=".7" data-ratex="1.6"><a href="">Learn More</a></li>
-                            <li class="scroll" data-ratey=".7" data-ratex="1.4"><a href="">News and Updates</a>
+                            <li class="scroll" data-ratey=".7" data-ratex="1.4"><a href="#section-2">News and Updates</a>
                                 <ul class="drop-menu menu-1">
                                     {% for post in site.posts %}
                                     <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
@@ -39,7 +39,7 @@
                 <h1 class="welcome-h">Welcome to the fantastic world of particle physics!</h1>
                 <p class="welcome-p">Collect and upgrade experiment cards, build your deck, and play games all while learning about the most cutting edge developments in particle physics!</p>
                 <div class="main-btns">
-                    <button onclick="window.location.href='{{  site.baseurl }}/the-experiments.html'">Meet the Experiments</button>
+                    <button onclick="window.location.href='{{  site.baseurl }}/the-experiments.html'">Meet the Crew</button>
                     <button>The Game</button>
                     <button>Learn More</button>
                     <button>My Profile</button>
@@ -48,10 +48,17 @@
         </div>
     </section>
     <section id="section-2">
+        <div class="header header--2">
+            <h1 class="header__title">News and Updates</h1>
+        </div>
+        <div class="news">
 
+        </div>
+        <div class="news-nav">
+
+        </div>
     </section>
     <script>
-
         window.addEventListener('scroll', function(e) {
             const target = document.querySelectorAll('.scroll');
 
@@ -65,6 +72,7 @@
             }
         
         });
+
 
     </script>
 </body>
