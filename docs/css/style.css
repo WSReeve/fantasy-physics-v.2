@@ -1,12 +1,15 @@
-html {
-  scroll-behavior: smooth;
-  font-size: 20px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-body {
+html, body {
+  scroll-behavior: smooth;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   background: #000000;
+  width: 100vw;
 }
   
   section {
@@ -23,8 +26,8 @@ body {
   }
   
   .gradient {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+1,0+43,1+100 */
     background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 43%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
@@ -35,41 +38,158 @@ body {
   }
   
   .container {
-    width: 85%;
-    height: 35rem;
-    position: relative;
+    width: 95%;
+    max-width: 1000px;
+    height: 100vh;
     margin: 0 auto;
   }
   
-  .header {
+/*nav styles start here*/
+
+  header {
+    top: 0;
+    left: 0;
+    text-align: left;
     width: 100%;
-    padding: 1em;
+    position: fixed;
+    z-index: 999;
+    background-color: red;
   }
-  
+
   .logo > a {
     text-decoration: none;
     font-weight: bold;
     color: #fff;
     font-family: 'Maven Pro', sans-serif;
-    font-size: 2rem;
-    position: absolute;
-    padding: 1rem;
+    font-size: 1.5rem;
+    margin: 0;
+    padding-left: 1rem;
   }
 
-  nav {
-      text-align: center;
-      padding: 20px;
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
   }
-  
-  nav > ul {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
+
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+
+  .nav-toggle-label {
     position: absolute;
-    right: 20px;
+    top: 0;
+    right: 1rem;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
   
-  nav > ul > li {
+  .span {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 1.3em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .span--a, .span--b{
+    content: '';
+    position: absolute;
+  }
+  
+  .span--a {
+    bottom: 9px;
+  }
+  
+  .span--b {
+    top: 9px;
+  }
+  
+
+  .site-nav {
+    background: red;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: -webkit-transform 400ms ease-in-out;
+    transition: -webkit-transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  }
+  
+  .site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .site-nav li {
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+  }
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
+.site-nav a:hover {
+  color: #000;
+}
+
+/*when burger is open*/
+
+.nav-toggle:checked ~ .site-nav {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ .site-nav a {
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease-in-out 250ms;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle:checked ~ label .span--1 {
+  transform: rotate(45deg);
+  -webkit-transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+}
+.nav-toggle:checked ~ label .span--a {
+  transform: rotate(135deg) translate(-5.5px, 5.5px);
+  -webkit-transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+
+}
+.nav-toggle:checked ~ label .span--b {
+  opacity: 0;
+  -webkit-transition: opacity 250ms ease-out;
+  transition: opacity 250ms ease-out;
+}
+.nav-toggle:checked #section-1 {
+  opacity: 0;
+  transform: scale(0.85);
+  visibility: hidden;
+}
+
+
+/*
+
+  .site-nav > ul > li {
     list-style: none;
     float: left;
     width: auto;
@@ -244,77 +364,40 @@ body {
     font-size: 14px;
   }
   
-  .welcome-h {
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    padding: 20px;
-    padding-bottom: 0;
-    font-size: 3em;
-    position: relative;
-    margin-right: 15%;
+*/
 
-  }
 
-  .welcome-p {
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    font-size: 1.5em;
-    position: relative;
-    padding-left: 20px;
-    margin-right: 40%;
-    margin-left: 5%;
-
+.main--2 {
+  position: absolute;
+  bottom: 5vh;
+  width: 95vw;
+  max-width: 900px;
 }
 
-  .main-btns {
-    width: 70%;
-    height: 50%;
+  .main__welcome {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: .8rem;
+    position: relative;
+    padding: 0rem 1rem 0rem 1rem
+  }
+
+  .main__btns {
+    height: 4rem;
     position: relative;
     text-align: center;
-    margin: auto;
-    top: 20%;
-    right: 0;
-    bottom: auto;
-    left: 0;
+    margin: 0;
   }
   
-  .main-btns > button {
-    width: 45%;
-    height: 45%;
-    background-color: #6a21e0;
-    font-size: 25px;
-    font-weight: bold;
+  .main__btns > button {
+    width: 40vw;
+    height: 3rem;
+    background-color: #6634D1;
+    font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
     border: none;
-    border-radius: 10px;
+    border-radius: 3rem;
     color: #fff;
-    margin: 1%;
+    margin: .2rem
   }
-
-#section-2 {
-  display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
-  grid-template-areas: "top" "main" "bottom";
-  height: 100vh;
-  margin: 1rem;
-}
-
-.header--2{
-  grid-area: top;
-}
-
-.header__title {
-  color: #fff;
-  font-size: 3rem;
-  font-family: 'Maven Pro', sans-serif;
-  padding: 1rem;
-}
-
-.news{
-  grid-area: main;
-  background: #fff;
-}
-
-.news-nav {
-  grid-area: bottom;
-}
