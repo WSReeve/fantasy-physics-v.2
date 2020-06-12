@@ -15,46 +15,49 @@
 </head>
 <body>
     <section id="section-1">
-        <div class="bg-image">
-            <div class="gradient"></div>
-            <div class="container">
-                <header>
-                    <div class="scroll logo" data-ratey="0.7" data-ratex='-1.5'><a href="{{ site.baseurl }}/">Fantasy Physics</a></div>
-                    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-                    <nav class="site-nav">
-                        <ul>
-                            <li class="scroll" data-ratey=".7" data-ratex="1.8"><a href="{{ site.baseurl }}">Get Started</a></li>
-                            <li class="scroll" data-ratey=".7" data-ratex="1.6"><a href="">Learn More</a></li>
-                            <li class="scroll" data-ratey=".7" data-ratex="1.4"><a href="#section-2">News and Updates</a>
-                                <ul class="drop-menu menu-1">
-                                    {% for post in site.posts %}
-                                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            <li class="scroll" data-ratey="0.7" data-ratex="1.2"><a href="">About Us</a></li>
-                            <li class="scroll" data-ratey="0.7" data-ratex="1"><a class="sign-in" href="">Sign In</a></li>
-                        </ul>
-                    </nav>
-                    <label for="nav-toggle" class="nav-toggle-label">
-                        <span class="span span--1"></span>
-                        <span class="span span--a"></span>
-                        <span class="span span--b"></span>
-                    </label>
-                </header>
-                <main class="main main--2">
-                    <p class="main__welcome">Collect and upgrade experiment cards, build your deck, and play games all while learning about the most cutting edge developments in particle physics!</p>
-                <div class="main__btns">
-                    <button onclick="window.location.href='{{  site.baseurl }}/the-experiments.html'">The Crew</button>
-                    <button>Learn More</button>
-                </div>
-                </main>
+        <div class="bg-image"></div>
+        <div class="gradient"></div>
+        <div class="container">
+            <header class="header">
+                <div class="scroll logo" data-ratey="0.7" data-ratex='-1.5'><a href="{{ site.baseurl }}/">Fantasy Physics</a></div>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" onclick="navigate()">
+                <nav class="site-nav">
+                    <ul>
+                        <li class="scroll" data-ratey=".7" data-ratex="1.8"><a href="{{ site.baseurl }}">Get Started</a></li>
+                        <li class="scroll" data-ratey=".7" data-ratex="1.6"><a href="">Learn More</a></li>
+                        <li class="scroll" data-ratey=".7" data-ratex="1.4"><a href="#section-2">News and Updates</a>
+                           <ul class="drop-menu menu-1">
+                                {% for post in site.posts %}
+                                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="scroll" data-ratey="0.7" data-ratex="1.2"><a href="">About Us</a></li>
+                        <li class="scroll" data-ratey="0.7" data-ratex="1"><a class="sign-in" href="">Sign In</a></li>
+                    </ul>
+                </nav>
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span class="span span--1"></span>
+                    <span class="span span--a"></span>
+                    <span class="span span--b"></span>
+                </label>
+            </header>
+            <main class="main main--1">
+
+            </main>
+            <main class="main main--2">
+                <p class="main__welcome">Collect and upgrade experiment cards, build your deck, and play games all while learning about the most cutting edge developments in particle physics!</p>
+            <div class="main__btns">
+                <button onclick="window.location.href='{{  site.baseurl }}/the-experiments.html'">THE CREW</button>
+                <button>LEARN MORE</button>
             </div>
+            </main>
         </div>
     </section>
-    <script>
+    <script type="text/javascript">
         
-    /*    window.addEventListener('scroll', function(e) {
+    /* BROKEN PARALAX
+       window.addEventListener('scroll', function(e) {
             const target = document.querySelectorAll('.scroll');
 
             var posY, posX
@@ -68,7 +71,19 @@
         
         });
         */
+        /* UNUSED PARENT SELECTION
+        var mobile = document.getElementById('section-1');
 
+        function navigate() {
+            if (document.getElementById('nav-toggle').checked) {
+            console.log("checked");
+            mobile.classList.add('nav-menu')
+        } else {
+            console.log("unchecked");
+            mobile.classList.remove('nav-menu')
+        }
+        }
+        */
     </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 
+/*GENERAL STYLING*/
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -8,12 +10,12 @@ html, body {
   font-size: 20px;
   margin: 0;
   padding: 0;
-  background: #000000;
-  width: 100vw;
+  background: #333;
 }
   
-  section {
+  #section-1 {
     height: 100vh;
+    width: 100vw;
   }
   
   .bg-image {
@@ -23,11 +25,14 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 1;
   }
   
   .gradient {
-    width: 100vw;
-    height: 100vh;
+    top: 0em;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
     position: absolute;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+1,0+43,1+100 */
     background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 43%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
@@ -38,25 +43,28 @@ html, body {
   }
   
   .container {
+    z-index: 100;
     width: 95%;
     max-width: 1000px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
   }
   
 /*nav styles start here*/
 
-  header {
+  .header {
+    padding-top: .5rem;
     top: 0;
     left: 0;
     text-align: left;
     width: 100%;
     position: fixed;
     z-index: 999;
-    background-color: red;
+    background: transparent;
   }
 
   .logo > a {
+    z-index: 1;
     text-decoration: none;
     font-weight: bold;
     color: #fff;
@@ -65,6 +73,11 @@ html, body {
     margin: 0;
     padding-left: 1rem;
   }
+
+
+/*===========
+BURGER BUTTON
+=============*/
 
   .nav-toggle {
     position: absolute !important;
@@ -93,69 +106,82 @@ html, body {
     width: 1.3em;
     border-radius: 2px;
     position: relative;
+    bottom: -.3rem;
   }
   
-  .span--a, .span--b{
+  .span--a,
+  .span--b {
     content: '';
     position: absolute;
   }
   
   .span--a {
-    bottom: 9px;
+    bottom: .35rem;
   }
   
   .span--b {
-    top: 9px;
-  }
-  
-
-  .site-nav {
-    background: red;
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    -webkit-transform: scale(1, 0);
-    transform: scale(1, 0);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    -webkit-transition: -webkit-transform 400ms ease-in-out;
-    transition: -webkit-transform 400ms ease-in-out;
-    transition: transform 400ms ease-in-out;
-    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  }
-  
-  .site-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: 'Open Sans', sans-serif;
+    top: 1rem;
   }
 
-  .site-nav li {
-    margin-bottom: .5rem;
-    margin-left: 1rem;
-  }
+/*==========
+  NAV MENU
+============*/
+/*when burger is closed*/
+.site-nav {
+  z-index: -1;
+  background: orangered;
+  position: absolute;
+  text-align: right;
+  padding-top: 2rem;
+  top: 0%;
+  right: 0;
+  width: 100%;
+  /*
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+*/
+  -webkit-clip-path: circle(1rem at calc(100% - 1.6rem) 1.5rem);
+  clip-path: circle(1rem at calc(100% - 1.6rem) 1.5rem);
+  transition: clip-path 500ms ease-in-out;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.site-nav li {
+  margin-bottom: .5rem;
+  margin-right: 1rem;
+}
 
 .site-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  opacity: 0;
-  -webkit-transition: opacity 150ms ease-in-out;
-  transition: opacity 150ms ease-in-out;
+color: white;
+text-decoration: none;
+font-size: 1.2rem;
+opacity: 0;
+-webkit-transition: opacity 150ms ease-in-out;
+transition: opacity 150ms ease-in-out;
 }
 
-.site-nav a:hover {
-  color: #000;
+.site-nav a:hover,
+.site-nav a:focus {
+color: #000;
 }
 
-/*when burger is open*/
+  /*when burger is open*/
 
 .nav-toggle:checked ~ .site-nav {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+  -webkit-clip-path: circle(150% at 91% -10%);
+  clip-path: circle(150% at 91% -10%);
 }
 
 .nav-toggle:checked ~ .site-nav a {
@@ -180,12 +206,8 @@ html, body {
   -webkit-transition: opacity 250ms ease-out;
   transition: opacity 250ms ease-out;
 }
-.nav-toggle:checked #section-1 {
-  opacity: 0;
-  transform: scale(0.85);
-  visibility: hidden;
-}
 
+/*TOMORROW CHANGE TO USING JAVASCRIPT EVENTLISTENERS*/
 
 /*
 
@@ -372,9 +394,11 @@ html, body {
   bottom: 5vh;
   width: 95vw;
   max-width: 900px;
+  z-index: 100;
 }
 
   .main__welcome {
+    line-height: 1.7em;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
@@ -391,7 +415,7 @@ html, body {
   }
   
   .main__btns > button {
-    width: 40vw;
+    width: 43vw;
     height: 3rem;
     background-color: #6634D1;
     font-size: 1rem;
