@@ -1,8 +1,188 @@
 /*=======================
-    TABLE OF CONTENTS
-1.
-2.
-3.
+----TABLE OF CONTENTS----
+1.  General Styles
+2.  Typography
+3.  Navigation
+    a.  Invisible Menu Toggle (checkbox)
+    b.  Visible Burger Button
+    c.  Navigation Menu
+4.  Buttons
+5.  Homepage Styles
+6.
 ========================*/
+
+/*********************
+    General Styles
+*********************/
+
+:root {
+    --clr-bkgd: #2f2f2f;
+    --clr-bkgd-light: #DDDDDD;
+    --clr-primary: #5124C9;
+    --clr-primary-light: #7B8FFC;
+    --clr-accent: #2AC424;
+
+    --ff-logo: 'Maven Pro', sans-serif;
+    --ff-text: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html, body, div, h1, h2, h3, p, a, img,
+i, ol, ul, li, label, table, caption,
+footer, header, nav, section {
+    margin: 0; padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: var(--ff-text);
+    color: #fff;
+    font-size: 20px;
+}
+
+body {
+    background: var(--clr-bkgd);
+}
+
+img {
+    display: block;
+}
+
+/*****************
+    Typography  
+*****************/
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1 {
+    font-family: var(--ff-logo);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-family: var(--ff-text);
+    font-weight: 800;
+    color: var(--clr-primary);
+    line-height: 0.8;
+}
+
+p {
+    font-weight: 500;
+}
+
+/*****************
+    Navigation  
+******************/
+
+/* Invisible Menu Toggle (checkbox) */
+
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+}
+
+/* Visible Burger Button */
+
+.nav-toggle__label {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    cursor: pointer;
+    z-index: 333;
+}
+
+.nav-toggle__label:hover .icon__open::before {
+    width: 100%;
+}
+
+.icon__open {
+    display: block;
+    width: 100%;
+    height: 3.5px;
+    background-color: white;
+    margin-bottom: 4px;
+    transform: rotate(-45deg);
+    position: relative;
+}
+
+.icon__open::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.icon__open.open--top {
+    width: 65%;
+    margin-left: -3%;
+}
+
+.icon__open.open--middle::before {
+    left: auto;
+    right: 0;
+}
+
+.icon__open.open--bottom {
+    width: 65%;
+    margin-left: 40%;
+}
+
+/* Navigation Menu */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5em;
+    font-size: 0.9em;
+}
+
+/**************
+    Buttons  
+***************/
+
+
+
+
+/*********************
+    Homepage Styles  
+**********************/
+
+header {
+    margin: 0.5rem;
+}
+
+.logo a {
+    margin-left: .5rem;
+}
+
 
 

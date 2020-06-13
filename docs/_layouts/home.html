@@ -6,42 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Physics</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1 class="logo"><a href="{{ site.baseurl }}/">Fantasy Physics</a></h1>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" onclick="navigate()">
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#">Get Started</a></li>
-                <li><a href="#">Learn More</a></li>
-                <li><a href="#">News & Updates</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-            <i class="icon-open open--top"></i>
-            <i class="icon-open open--middle"></i>
-            <i class="icon-open open--bottom"></i>
+        <div class="nav-container">
+            <i class="nav-menu__bkgd top"></i>
+            <i class="nav-menu__bkgd middle"></i>
+            <i class="nav-menu__bkgd bottom"></i>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Get Started</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">News & Updates</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+        <label for="nav-toggle" class="nav-toggle__label">
+            <i class="icon__open open--top"></i>
+            <i class="icon__open open--middle"></i>
+            <i class="icon__open open--bottom"></i>
 
-            <i class="icon-close close--left"></i>
-            <i class="icon-close close--right"></i>
+            <i class="icon__close close--left"></i>
+            <i class="icon__close close--right"></i>
         </label>
     </header>
 
     <main>
         <section class="featured-cards">
             <div class="card__wrapper">
+                <div class="card card--cover">
+                    <h2>THIS WEEK'S FEATURED EXPERIMENT CARDS</h2>
+                    <div class="card__text">
+                        <p>Every week we choose 3 experiments to spotlight on the homepage!</p>
+                    </div>
+                </div>
                 <div class="card card--1">
-                    <div class="card__text"></div>
+                    <h2>FEATURED EXPERIMENT</h2>
+                    <div class="card__text">
+                        <p>Some description text.</p>
+                    </div>
                 </div>
                 <div class="card card--2">
-                    <div class="card__text"></div>
+                    <h2>FEATURED EXPERIMENT</h2>
+                    <div class="card__text">
+                        <p>Some description text.</p>
+                    </div>
                 </div>
                 <div class="card card--3">
-                    <div class="card__text"></div>
+                    <h2>FEATURED EXPERIMENT</h2>
+                    <div class="card__text">
+                        <p>Some description text.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -62,6 +81,17 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js'></script><script  src="./script.js"></script>
+    <script type="text/javascript">
 
+        /* console log the nav-toggle checkbox */
+
+        function navigate() {
+            if (document.getElementById('nav-toggle').checked) {
+                console.log("checked");
+            } else {
+                console.log("unchecked");
+            }
+        }
+    </script>
 </body>
 </html>
