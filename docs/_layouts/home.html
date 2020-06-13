@@ -1,89 +1,67 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Fantasy Physics</title>
-   <link rel="stylesheet" href="css/style.css">
-   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-   <style type="text/css">
-    /*font-family: 'Maven Pro', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Open Sans', sans-serif;*/
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Physics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="section-1">
-        <div class="bg-image"></div>
-        <div class="gradient"></div>
-        <div class="container">
-            <header class="header">
-                <div class="scroll logo" data-ratey="0.7" data-ratex='-1.5'><a href="{{ site.baseurl }}/">Fantasy Physics</a></div>
-                <input type="checkbox" id="nav-toggle" class="nav-toggle" onclick="navigate()">
-                <nav class="site-nav">
-                    <ul>
-                        <li class="scroll" data-ratey=".7" data-ratex="1.8"><a href="{{ site.baseurl }}">Get Started</a></li>
-                        <li class="scroll" data-ratey=".7" data-ratex="1.6"><a href="">Learn More</a></li>
-                        <li class="scroll" data-ratey=".7" data-ratex="1.4"><a href="#section-2">News and Updates</a>
-                           <ul class="drop-menu menu-1">
-                                {% for post in site.posts %}
-                                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                        <li class="scroll" data-ratey="0.7" data-ratex="1.2"><a href="">About Us</a></li>
-                        <li class="scroll" data-ratey="0.7" data-ratex="1"><a class="sign-in" href="">Sign In</a></li>
-                    </ul>
-                </nav>
-                <label for="nav-toggle" class="nav-toggle-label">
-                    <span class="span span--1"></span>
-                    <span class="span span--a"></span>
-                    <span class="span span--b"></span>
-                </label>
-            </header>
-            <main class="main main--1">
+    <header>
+        <h1 class="logo"><a href="{{ site.baseurl }}/">Fantasy Physics</a></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" onclick="navigate()">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Get Started</a></li>
+                <li><a href="#">Learn More</a></li>
+                <li><a href="#">News & Updates</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <i class="icon-open open--top"></i>
+            <i class="icon-open open--middle"></i>
+            <i class="icon-open open--bottom"></i>
 
-            </main>
-            <main class="main main--2">
-                <p class="main__welcome">Collect and upgrade experiment cards, build your deck, and play games all while learning about the most cutting edge developments in particle physics!</p>
-            <div class="main__btns">
-                <button onclick="window.location.href='{{  site.baseurl }}/the-experiments.html'">THE CREW</button>
-                <button>LEARN MORE</button>
+            <i class="icon-close close--left"></i>
+            <i class="icon-close close--right"></i>
+        </label>
+    </header>
+
+    <main>
+        <section class="featured-cards">
+            <div class="card__wrapper">
+                <div class="card card--1">
+                    <div class="card__text"></div>
+                </div>
+                <div class="card card--2">
+                    <div class="card__text"></div>
+                </div>
+                <div class="card card--3">
+                    <div class="card__text"></div>
+                </div>
             </div>
-            </main>
-        </div>
-    </section>
-    <script type="text/javascript">
-        
-    /* BROKEN PARALAX
-       window.addEventListener('scroll', function(e) {
-            const target = document.querySelectorAll('.scroll');
+        </section>
 
-            var posY, posX
-            var index = 0, length = target.length;
+        <section class="action">
+            <p>Collect and upgrade experiment cards, build your deck, and play games all while learning about the most cutting edge developments In particle physics!</p>
+            <div class="btn-group">
+                <a href="" class="btn">THE CREW</a>
+                <a href="" class="btn">LEARN MORE</a>
+            </div>
+        </section>
 
-            for(index; index <length; index++) {
-                let posY = window.pageYOffset * parseFloat(target[index].dataset.ratey);
-                let posX = window.pageYOffset * parseFloat(target[index].dataset.ratex);
-                target[index].style.transform = 'translate3d('+ posX +'px,'+ posY +'px, 0px)';
-            }
-        
-        });
-        */
-        /* UNUSED PARENT SELECTION
-        var mobile = document.getElementById('section-1');
+        <footer>
 
-        function navigate() {
-            if (document.getElementById('nav-toggle').checked) {
-            console.log("checked");
-            mobile.classList.add('nav-menu')
-        } else {
-            console.log("unchecked");
-            mobile.classList.remove('nav-menu')
-        }
-        }
-        */
-    </script>
+        </footer>
+    </main>
+    <!-- jQuery ref sheets -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js'></script><script  src="./script.js"></script>
+
 </body>
 </html>
