@@ -17,7 +17,7 @@
             <i class="nav-menu__bkgd middle"></i>
             <i class="nav-menu__bkgd bottom"></i>
             <nav class="nav-menu">
-                <ul>
+                <ul class="nav">
                     <li><a href="#">Get Started</a></li>
                     <li><a href="#">Learn More</a></li>
                     <li><a href="#">News & Updates</a></li>
@@ -25,7 +25,7 @@
                 </ul>
             </nav>
         </div>
-        <label for="nav-toggle" class="nav-toggle__label">
+        <label for="nav-toggle" class="nav-toggle__icon">
             <i class="icon__open open--top"></i>
             <i class="icon__open open--middle"></i>
             <i class="icon__open open--bottom"></i>
@@ -80,7 +80,8 @@
     <!-- jQuery ref sheets -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js'></script><script  src="./script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js'></script>
+    <script  src="script/script.js"></script>
     <script type="text/javascript">
 
         /* console log the nav-toggle checkbox */
@@ -88,8 +89,18 @@
         function navigate() {
             if (document.getElementById('nav-toggle').checked) {
                 console.log("checked");
+                if(tlOpen.progress() < 1){
+                    tlOpen.play();
+                } else {
+                    tlOpen.restart();
+                }
             } else {
                 console.log("unchecked");
+                if(tlClose.progress() < 1){
+                    tlClose.play();
+                } else {
+                    tlClose.restart();
+                }
             }
         }
     </script>

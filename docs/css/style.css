@@ -1,6 +1,7 @@
 /*=======================
 ----TABLE OF CONTENTS----
 1.  General Styles
+    a.  Colors and Fonts
 2.  Typography
 3.  Navigation
     a.  Invisible Menu Toggle (checkbox)
@@ -15,11 +16,14 @@
     General Styles
 *********************/
 
+/* Colors and Fonts */
+
 :root {
     --clr-bkgd: #2f2f2f;
     --clr-bkgd-light: #DDDDDD;
     --clr-primary: #5124C9;
     --clr-primary-light: #7B8FFC;
+    --clr-primary-grad: linear-gradient(to right, #7B8FFC, #6943CF);
     --clr-accent: #2AC424;
 
     --ff-logo: 'Maven Pro', sans-serif;
@@ -91,13 +95,13 @@ p {
     left: -9999px !important;
 }
 
-.nav-toggle:focus ~ .nav-toggle-label {
+.nav-toggle:focus ~ .nav-toggle__icon {
     outline: 3px solid rgba(lightblue, .75);
 }
 
 /* Visible Burger Button */
 
-.nav-toggle__label {
+.nav-toggle__icon {
     position: absolute;
     top: 1.2rem;
     right: 1rem;
@@ -108,7 +112,8 @@ p {
     z-index: 333;
 }
 
-.nav-toggle__label:hover .icon__open::before {
+.nav-toggle__icon:hover .icon__open::before,
+.nav-toggle__icon:hover .icon__close::before {
     width: 100%;
 }
 
@@ -116,7 +121,7 @@ p {
     display: block;
     width: 100%;
     height: 3.5px;
-    background-color: white;
+    background-image: var(--clr-primary-grad);
     margin-bottom: 4px;
     transform: rotate(-45deg);
     position: relative;
@@ -149,20 +154,120 @@ p {
     margin-left: 40%;
 }
 
-/* Navigation Menu */
-
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: space-around;
+.icon__close {
+    display: block;
+    width: 100%;
+    height: 3.5px;
+    background-color: var(--clr-accent);
+    position: relative;
 }
 
-nav a {
+.icon__close::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.close--left {
+    transform: translateX(100px) translateY(-100px) rotate(-45deg);
+}
+
+.close--right {
+    transform: translateX(-100px) translateY(-100px) rotate(45deg);
+    top: -3px;
+}
+
+/* Navigation Menu */
+
+.nav-container, .nav-menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.nav-container {
+    z-index: 20;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: block;
+    width: 100%;
+    padding: 20%;
+}
+
+.nav-menu li {
+    text-align: right;
+    display: block;
+    padding: 1rem 0rem;
+}
+
+.nav-menu a {
     display: inline-block;
-    padding: 0.5em;
+    padding: 0.5em 0em;
     font-size: 0.9em;
+    color: var(--clr-bkgd);
+    position: relative;
+}
+
+.nav-menu a:hover::before,
+.nav-menu a:focus::before {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.nav-menu a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1rem;
+    height: 3px;
+    opacity: 0;
+    background-color: var(--clr-bkgd);
+    transform: translateX(100px);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.nav-menu__bkgd {
+    position: absolute;
+  display: block;
+  width: 200%;
+  left: -53%;
+  top: -25%;
+  height: 40%;
+  background-color: var(--clr-bkgd-light);
+}
+
+.nav-menu__bkgd.top {
+    left: -34%;
+    top: 0;
+    transform: rotate(-45deg) translateY(-152%);
+}
+
+.nav-menu__bkgd.middle {
+    top: 29%;
+    left: -53%;
+    transform: rotate(-45deg) scaleY(0);
+}
+
+.nav-menu__bkgd.bottom {
+    top: 105%;
+    transform: rotate(-45deg) translateY(25%);
+    left: -20%;
 }
 
 /**************
