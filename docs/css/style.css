@@ -7,9 +7,11 @@
     a.  Invisible Menu Toggle (checkbox)
     b.  Visible Burger Button
     c.  Navigation Menu
-4.  Buttons
-5.  Homepage Styles
-6.
+4.  Homepage Styles
+    a. Cards
+    b. Action Area
+        i. buttons
+5.
 ========================*/
 
 /*********************
@@ -42,6 +44,10 @@ footer, header, nav, section {
     margin: 0; padding: 0;
 }
 
+html, body {
+    height: 100vh;
+}
+
 html {
     box-sizing: border-box;
     font-family: var(--ff-text);
@@ -53,8 +59,16 @@ body {
     background: var(--clr-bkgd);
 }
 
+.site-container {
+    height: 100%;
+}
+
 img {
     display: block;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 /*****************
@@ -186,6 +200,7 @@ p {
 /* Navigation Menu */
 
 .nav-container, .nav-menu {
+    visibility: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -202,13 +217,13 @@ p {
     align-items: center;
 }
 
-.nav-menu ul {
+.nav {
     display: block;
     width: 100%;
     padding: 20%;
 }
 
-.nav-menu li {
+.nav li {
     text-align: right;
     display: block;
     padding: 1rem 0rem;
@@ -243,38 +258,34 @@ p {
 }
 
 .nav-menu__bkgd {
+    visibility: hidden;
     position: absolute;
-  display: block;
-  width: 200%;
-  left: -53%;
-  top: -25%;
-  height: 40%;
-  background-color: var(--clr-bkgd-light);
+    display: block;
+    width: 255%;
+    left: -53%;
+    top: -25%;
+    height: 44%;
+    background-color: var(--clr-bkgd-light);
+    
 }
 
-.nav-menu__bkgd.top {
-    left: -34%;
+.bkgd--top {
+    left: -60%;
     top: 0;
-    transform: rotate(-45deg) translateY(-152%);
+    transform: rotate(-45deg) translateY(-150%);
 }
 
-.nav-menu__bkgd.middle {
+.bkgd--middle {
     top: 29%;
     left: -53%;
     transform: rotate(-45deg) scaleY(0);
 }
 
-.nav-menu__bkgd.bottom {
+.bkgd--bottom {
     top: 105%;
     transform: rotate(-45deg) translateY(25%);
     left: -20%;
 }
-
-/**************
-    Buttons  
-***************/
-
-
 
 
 /*********************
@@ -289,5 +300,103 @@ header {
     margin-left: .5rem;
 }
 
+main {
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: "cards"
+                        "action";
+    grid-template-rows: 1fr 1fr;
+}
+
+.featured-cards {
+    grid-area: cards;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    animation: all .3s ease-in;
+    padding-bottom: 1rem;
+}
+
+/* Cards */
+
+.card__wrapper {
+    display: flex;
+    padding: 1rem;
+}
+
+.card ~ .card {
+    margin: 0rem 0rem 0rem 1rem;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    border: 0.4em;
+    border-color: var(--clr-primary);
+    border-style: solid;
+	background: var(--clr-bkgd-light);
+	border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,.45);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__text {
+    width: 80%;
+    height: 35%;
+	background: #fff;
+	border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,.3);
+    margin: auto auto 1rem;
+}
+
+.card h2 {
+    padding-top: 0.5rem;
+    font-size: 1.25em;
+}
+
+.card__text p {
+    color: var(--clr-bkgd);
+    font-size: .75em;
+    padding: 0.5rem 0.35rem;
+}
+
+/* Action Area */
+
+.action {
+    grid-area: action;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0em 1em 1em;
+}
+
+.action p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+/* buttons */
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn {
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    padding: 1em 3em;
+    border-radius: 3em;
+    background-image: var(--clr-primary-grad);
+    align-content: center;
+    display: block;
+    margin: 0.5em 0;
+    box-shadow: 0rem 1rem 1rem 0 rgba(0,0,0,.3);
+}
 
 

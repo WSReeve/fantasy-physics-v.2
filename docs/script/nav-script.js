@@ -20,11 +20,13 @@ var closeTriggerLeft = trigger.find('.close--left');
 var closeTriggerRight = trigger.find('.close--right');
 
 //NAVIGATION
-var navContainer = $('.nav-menu');
-var navMenu = $('.nav');
-var navTop = $('.av-menu__bkgd.top');
-var navMiddle = $('.av-menu__bkgd.middle');
-var navBottom = $('.av-menu__bkgd.bottom');
+var navMenu = $('.nav-menu');
+var navCont = $('.nav-container')
+var nav = $('.nav');
+var navBkgd = $('.nav-menu__bkgd');
+var navTop = $('.bkgd--top');
+var navMiddle = $('.bkgd--middle');
+var navBottom = $('.bkgd--bottom');
 
 //TIMELINE
 var tlOpen = new TimelineMax({paused: true});
@@ -33,9 +35,7 @@ var tlClose = new TimelineMax({paused: true});
 //OPEN TIMELINE
 tlOpen.add("preOpen")
 .to(openTriggerTop, 0.4, {
-  x: "+80px", y: "-80px", delay: 0.1, ease: Power4.easeIn, onComplete: function() {
-    trigger.css('z-index','25');
-  }
+  x: "+80px", y: "-80px", delay: 0.1, ease: Power4.easeIn,
 }, "preOpen")
 .to(openTriggerMiddle, 0.4, {
   x: "+=80px", y: "-=80px", ease: Power4.easeIn,
@@ -44,19 +44,28 @@ tlOpen.add("preOpen")
   x: "+=80px", y: "-=80px", delay: 0.2, ease: Power4.easeIn
 }, "preOpen")
 .add("open", "-=0.4")
+.to(navBkgd, 0.7, {
+  visibility: "visible"
+}, "open")
+.to(navMenu, 0.7, {
+  visibility: "visible"
+}, "open")
+.to(navCont, 0.7, {
+  visibility: "visible"
+}, "open")
 .to(navTop, 0.8, {
-  y: "13%",
+  y: "20%",
   ease: Power4.easeInOut
 }, "open")
 .to(navMiddle, 0.8, {
-  scaleY: 1,
+  scaleY: 2,
   ease: Power4.easeInOut
 }, "open")
 .to(navBottom, 0.8, {
   y: "-114%",
   ease: Power4.easeInOut
 }, "open")
-.fromTo(navMenu, 0.6, {
+.fromTo(nav, 0.6, {
   y: 30, opacity: 0, visibility: 'hidden'
 }, {
   y: 0, opacity: 1, visibility: 'visible', ease: Power4.easeOut
@@ -72,18 +81,18 @@ tlOpen.add("preOpen")
 //CLOSE TIMELINE
 tlClose.add("close")
   .to(navTop, 0.2, {
-  backgroundColor: "#6295ca", ease: Power4.easeInOut, onComplete: function() {
-    trigger.css('z-index','5');}
+  backgroundColor: "#7B8FFC", ease: Power4.easeInOut, onComplete: function() {
+    trigger.css('visibility','visible');}
 }, "close")
 .to(navMiddle, 0.2, {
-  backgroundColor: "#6295ca", ease: Power4.easeInOut
+  backgroundColor: "#7B8FFC", ease: Power4.easeInOut
 }, "close") 
 .to(navBottom, 0.2, {
-  backgroundColor: "#6295ca", ease: Power4.easeInOut
+  backgroundColor: "#7B8FFC", ease: Power4.easeInOut
 }, "close")
-  .to(navMenu, 0.6, {
+  .to(nav, 0.6, {
   y: 20, opacity: 0, ease: Power4.easeOut, onComplete: function() {
-    navMenu.css('visibility','hidden');
+    nav.css('visibility','hidden');
   }
 }, "close")
 .to(navTop, 0.8, {
@@ -101,6 +110,9 @@ tlClose.add("close")
     navTop.css('background-color','var(--clr-bkgd-light)');
     navMiddle.css('background-color','var(--clr-bkgd-light)');
     navBottom.css('background-color','var(--clr-bkgd-light)');
+    navBkgd.css('visibility', 'hidden');
+    navMenu.css('visibility', 'hidden');
+    navCont.css('visibility', 'hidden');
   }
 }, "close", "+=0.2")
 .to(closeTriggerLeft, 0.2, {
