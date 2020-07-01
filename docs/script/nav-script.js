@@ -65,9 +65,7 @@ tlOpen.add("preOpen")
   y: "-114%",
   ease: Power4.easeInOut
 }, "open")
-.fromTo(nav, 0.6, {
-  y: 30, opacity: 0, visibility: 'hidden'
-}, {
+.to(nav, 0.6, {
   y: 0, opacity: 1, visibility: 'visible', ease: Power4.easeOut
 }, "-=0.2")
 .add("preClose", "-=0.8")
