@@ -76,29 +76,30 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    background-color: var(--clr-primary);
+}
+
+.contacts {
+    background-color: var(--clr-accent);
+}
+
+h2, h3 {
     font-family: var(--ff-text);
     font-weight: 600;
-    color: #fff;
-    line-height: 0.8;
-    background-color: var(--clr-primary);
+    font-size: 1.2em;
     padding-top: 1em;
     padding-bottom: 1em;
     margin-top: 0.5em;
+    color: #fff;
+    line-height: 0.8;
 }
 
 p {
+    align-self: center;
+    max-width: 50ch;
     font-size: 0.8em;
     font-weight: 400;
     margin: .8em 2em;
-}
-
-h3 {
-    background-color: #000;
-    color: var(--clr-accent);
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    margin-top: 0.5em;
 }
 
 ul {
@@ -114,8 +115,42 @@ ul {
 *************/
 
 h2,
-h3,
 ul,
 p {
     text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    h2,
+    .contacts {
+        background-color: #2f2f2f;
+        text-align: center;
+        padding: 1em;
+        margin: auto;
+        border-radius: 1em;
+        border: 8px solid #2f2f2f;
+        box-shadow: 
+        0.25rem 0.25rem 0.4rem rgba(0, 0, 0, 0.2), 
+        -0.25rem -0.25rem 0.4rem rgba(255, 255, 255, 0.062),
+        inset 0.25rem 0.25rem 0.4rem rgba(0, 0, 0, 0.3), 
+        inset -0.25rem -0.25rem 0.4rem rgba(255, 255, 255, 0.05);
+    }
+
+    h2:hover {
+        background-color: var(--clr-primary);
+    }
+    .contacts:hover {
+        background-color: var(--clr-accent);
+    }
+
+    body {
+        display: inline-flex;
+    }
+
+    .nav li.about {
+        background: #171525;
+        border-radius: .25em;
+    }
+
 }
