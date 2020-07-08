@@ -6,62 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Physics</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 class="logo"><a href="{{ site.baseurl }}/">Fantasy Physics</a></h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" onclick="check()">
-        <div class="nav-container">
-            <i class="nav-menu__bkgd bkgd--top"></i>
-            <i class="nav-menu__bkgd bkgd--middle"></i>
-            <i class="nav-menu__bkgd bkgd--bottom"></i>
-            <nav class="nav-menu">
-                <ul class="nav">
-                    <li><a href="{{  site.baseurl }}/get-started.html">Get Started</a></li>
-                    <li><a href="{{  site.baseurl }}/learn-more.html">Learn More</a></li>
-                    <li class="news-updates"><a href="#">News & Updates</a></li>
-                    <li><a href="{{  site.baseurl }}/about.html">About</a></li>
-                    <li class="sign-in"><a href="{{ site.baseurl }}/sign-in.html">Sign In</a></li>
-                </ul>
-            </nav>
-        </div>
-        <label for="nav-toggle" class="nav-toggle__icon">
-            <i class="icon__open open--top"></i>
-            <i class="icon__open open--middle"></i>
-            <i class="icon__open open--bottom"></i>
-
-            <i class="icon__close close--left"></i>
-            <i class="icon__close close--right"></i>
-        </label>
-    </header>
+    {%- include header.html -%}
 
     <main>
         <section class="featured-cards">
             <div class="card__wrapper">
                 <div class="card card--cover">
-                    <h2>THIS WEEK'S FEATURED EXPERIMENT CARDS</h2>
+                    <h2>TITLE/COVER CARD</h2>
                     <div class="card__text">
                         <p>Every week we choose 3 experiments to spotlight on the homepage!</p>
                     </div>
                 </div>
                 <div class="card card--1">
-                    <h2>FEATURED EXPERIMENT</h2>
+                    <!-- <h2>PLACEHOLDER CARD</h2>
                     <div class="card__text">
                         <p>Some description text.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="card card--2">
-                    <h2>FEATURED EXPERIMENT</h2>
+                    <!-- <h2>PLACEHOLDER CARD</h2>
                     <div class="card__text">
                         <p>Some description text.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="card card--3">
-                    <h2>FEATURED EXPERIMENT</h2>
+                    <!-- <h2>PLACEHOLDER CARD</h2>
                     <div class="card__text">
                         <p>Some description text.</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -74,46 +50,5 @@
             </div>
         </section>
     </main>
-
-    
-    <!-- jQuery ref sheets -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js'></script>
-    <script  src="script/nav-script.js"></script>
-    <script type="text/javascript">
-
-        /* console log the nav-toggle checkbox */
-
-        function navigate() {
-            if (document.getElementById('nav-toggle').checked) {
-                console.log("checked");
-                if(tlOpen.progress() < 1){
-                    tlOpen.play();
-                } else {
-                    tlOpen.restart();
-                }
-            } else {
-                console.log("unchecked");
-                if(tlClose.progress() < 1){
-                    tlClose.play();
-                } else {
-                    tlClose.restart();
-                }
-            }
-        }
-        var query = window.matchMedia("(max-width: 1000px)")
-        function check() {
-            if (query.matches) {
-                console.log("navigate ran");
-                navigate();
-            } else {
-                console.log("navigate did not run");
-            }
-        }
-
-        query.addListener(check)
-
-    </script>
 </body>
 </html>

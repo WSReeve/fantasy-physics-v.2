@@ -21,7 +21,7 @@ var closeTriggerRight = trigger.find('.close--right');
 
 //NAVIGATION
 var navMenu = $('.nav-menu');
-var navCont = $('.nav-container')
+var navCont = $('.nav-container');
 var nav = $('.nav');
 var navBkgd = $('.nav-menu__bkgd');
 var navTop = $('.bkgd--top');

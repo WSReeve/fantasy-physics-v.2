@@ -3,10 +3,23 @@ header {
     padding: 0.5rem 1rem;
 }
 
+.logo {
+    font-family: var(--ff-logo);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
 .logo a {
     font-size: max(2.5vw, 1.6rem);
     line-height: 1rem;
+    text-decoration: none;
+    color: #fff;
 }
+
+a {
+    text-decoration: none;
+}
+
 
 /*****************
     Navigation  

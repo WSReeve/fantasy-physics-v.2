@@ -9,64 +9,51 @@ permalink: /the-experiments.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Experiments</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>The Crew</title>
+    <link rel="stylesheet" href="css/crew-styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section>
-        <div class="heading">
-            <h1 class="heading__back"><a href="{{ site.baseurl }}/">FUCK GO BACK</a></h1>
-            <h1 class="heading__title">The Crew</h1>
-        </div>
-        <div class="wrapper">
+    {%- include header.html -%}
 
-            <div class="card card--1">
-                <div class="card__image">
-                    <!--Put Image Here-->
-                </div>
-                <div class="card__text">
-                    <h3>WIMP Direct Dark Matter Deck</h3>
-                    <p>insert short desc here</p>
-                </div>
-            </div>
-            <div class="card card--2">
-                <div class="card__image">
-                    <!--Put image here-->
-                </div>
-                <div class="card__text">
-                        <h3>Indirect Dark Matter and Astroparticle Deck</h3>
-                    <p>insert short desc here</p>
+    <main>
+    <h2>The Crew</h2>
+    <section class="decks">
+        <div class="deck__wrapper">
+            <div class="deck deck--1" onclick="window.location.href='{{ site.baseurl }}/deck-1.html'">
+                <h3>Deck 1</h3>
+                <div class="deck__text">
+                    <p>desc.</p>
                 </div>
             </div>
-            <div class="card card--3">
-                <div class="card__image">
-                    <!--Put image here-->
-                </div>
-                <div class="card__text">
-                    <h3>Neutrino Deck</h3>
-                    <p>insert short desc here</p>
+            <div class="deck deck--2" onclick="window.location.href='{{ site.baseurl }}/deck-2.html'">
+                <h3>Deck 2</h3>
+                <div class="deck__text">
+                    <p>desc.</p>
                 </div>
             </div>
-            <div class="card card--4">
-                <div class="card__image">
-                    <!--Put image here-->
-                </div>
-                <div class="card__text">
-                    <h3>LHC Atlas Deck</h3>
-                    <p>insert short desc here</p>
+            <div class="deck deck--3" onclick="window.location.href='{{ site.baseurl }}/deck-3.html'">
+                <h3>Deck 3</h3>
+                <div class="deck__text">
+                    <p>desc.</p>
                 </div>
             </div>
-            <div class="card card--5">
-                <div class="card__image">
-                    <!--Put Image Here-->
-                </div>
-                <div class="card__text">
-                    <h3>LHC CMS Deck</h3>
-                    <p>insert short desc here</p>
+            <div class="deck deck--4" onclick="window.location.href='{{ site.baseurl }}/deck-4.html'">
+                <h3>Deck 4</h3>
+                <div class="deck__text">
+                    <p>desc.</p>
                 </div>
             </div>
-        </div> 
+            <div class="deck deck--5" onclick="window.location.href='{{ site.baseurl }}/deck-5.html'">
+                <h3>Deck 5</h3>
+                <div class="deck__text">
+                    <p>desc.</p>
+                </div>
+            </div>
+        </div>
     </section>
+    </main>
+
 </body>
 </html>

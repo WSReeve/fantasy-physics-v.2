@@ -365,7 +365,15 @@ main {
 }
 
 .card--1 {
-    background-image: url("../img/CMS-detector-image.jpg");
+    background-image: url(https://assets.pokemon.com/assets/cms2/img/cards/web/DP2/DP2_EN_1.png);
+}
+
+.card--2 {
+    background-image: url(https://assets.pokemon.com/assets/cms2/img/cards/web/DP2/DP2_EN_2.png);
+}
+
+.card--3 {
+    background-image: url(https://assets.pokemon.com/assets/cms2/img/cards/web/DP2/DP2_EN_3.png);
 }
 
 /* Action Area */
