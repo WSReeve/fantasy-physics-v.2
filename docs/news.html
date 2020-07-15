@@ -26,8 +26,10 @@ permalink: /news.html
         <ul class="list">
             {%- for post in site.posts -%}
             <li class="list-entries">
-                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <div class="entry-content">
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
             </li>
             {%- endfor -%}
         </ul>

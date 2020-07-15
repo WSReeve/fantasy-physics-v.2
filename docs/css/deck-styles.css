@@ -135,10 +135,12 @@ h2 {
 }
 
 .card-viewer__toggle:checked ~ .card__container{
+  height: 50vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  overflow-y: visible;
   animation: all .3s ease-in;
   padding-bottom: 3vh;
   scrollbar-width: none;
@@ -183,18 +185,21 @@ h2 {
   }
 
   .card {
-    transition: z-index 500ms ease;
     transition: transform 250ms ease;
     perspective: 500px;
     perspective-origin: 50% 50%;
   }
   .card:hover {
-    transform-style: preserve-3d;
     transform: scale(1.8);
     z-index: 100;
-    
   }
-
+  .card-viewer__toggle:checked ~ .card__container .card__wrapper .card:hover {
+    transform: none;
+    box-shadow: 0rem 0rem 1rem 0 rgba(116, 160, 255, 0.5);
+  }
+  .card-viewer__toggle:checked ~ .card__container .card__wrapper .card ~ .card {
+    margin: auto 0rem auto 1rem;
+  }
   .btn--back {
     left: 20rem;
     top: 11vh;

@@ -331,17 +331,19 @@ main {
 }
 
 .card {
-    width: 260px;
-    height: 360px;
+    width: 315px;
+    height: 440px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,.45);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.card--cover {
     border: 0.4em;
     border-color: var(--clr-primary);
     border-style: solid;
 	background: var(--clr-bkgd-light);
 	border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,.45);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .card__text {
@@ -365,15 +367,19 @@ main {
 }
 
 .card--1 {
-    background-image: url(https://assets.pokemon.com/assets/cms2/img/cards/web/DP2/DP2_EN_1.png);
+    background-image: url(../card-imgs/card-proton.png);
+    background-size: contain;
+    background-color: none;
 }
 
 .card--2 {
-    background-image: url(https://assets.pokemon.com/assets/cms2/img/cards/web/DP2/DP2_EN_2.png);
+    background-image: url(../card-imgs/card-muon.png);
+    background-size: contain;
 }
 
 .card--3 {
-    background-image: url(https://assets.pokemon.com/assets/cms2/img/cards/web/DP2/DP2_EN_3.png);
+    background-image: url(../card-imgs/card-higgs.png);
+    background-size: contain;
 }
 
 /* Action Area */
