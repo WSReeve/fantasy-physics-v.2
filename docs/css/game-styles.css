@@ -66,16 +66,15 @@ p {
 
 /* main styles */
 .interface {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
 }
 
-main {
-    margin: 15vh auto auto;
-    text-align: center;
-    align-content: center;
+.arena {
+    height: 75vh;
+    position: relative;
 }
 
 h1 {
@@ -83,84 +82,19 @@ h1 {
     color: var(--clr-accent);
 }
 
-.decks {
-    align-content: center;
+.card__wrapper {
+    height: 440px;
     width: 100%;
     display: flex;
-}
-
-.deck__wrapper {
-    display: flex;
-    padding: 1rem;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin: 10vh auto auto;
+    background-color: lightcoral;
 }
-
-.deck {
-    width: 260px;
-    height: 360px;
-    border: 0.4em;
-    border-color: var(--clr-primary);
-    border-style: solid;
-    background: var(--clr-bkgd-light);
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,.45);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    margin: 0rem;
-    animation: 500ms ease-in paused;
-}
-
-.deck:hover {
-    transform: scale(1.4);
-    z-index: 100;
-}
-
-.deck ~ .deck {
-    margin: 0rem 0rem 0rem 1rem;
-}
-
-.deck__text {
-    width: 80%;
-    height: 35%;
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,.3);
-    margin: auto auto 1rem;
-}
-
-.deck h3 {
-    padding-top: 0.5rem;
-    font-size: 1.25em;
-    color: var(--clr-primary);
-}
-
-.deck__text p {
-    color: var(--clr-bkgd);
-    font-size: .75em;
-    padding: 0.5rem 0.35rem;
-}
-
-/* Cards */
 
 .cards {
     width: 100%;
     display: flex;
-    overflow-x: scroll;
     animation: all .3s ease-in;
-    padding-bottom: 3vh;
-    scrollbar-width: none;
-    flex-shrink: 0;
     align-content: center;
-}
-
-.card__wrapper {
-    display: flex;
-    padding: 1rem;
-    margin: auto;
 }
 
 .card ~ .card {
@@ -176,6 +110,7 @@ h1 {
     text-align: center;
     display: flex;
     flex-direction: column;
+    
 }
 
 .card__content {

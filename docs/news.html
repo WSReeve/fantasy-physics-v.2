@@ -18,17 +18,28 @@ permalink: /news.html
     {%- include header.html -%}
 
 
-    <div class="container">
+    <div class="heading-container">
         <h2>News & Updates</h2>
-        <p>All the latest news in physics research and updates from the Fantasy Physics Team!</p>
     </div>
-    <nav class="list-nav">
-        <ul class="list">
+    <nav class="post-list__container">
+        {%- for post in site.posts -%}
+        <div class="post--feat">
+            <div class="post--feat__text">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <p class="date">{{ post.disp-date }}</p>
+                <p>{{ post.description }}</p>
+            </div>
+        </div>
+        {%- endfor -%}
+        <ul class="post-list">
             {%- for post in site.posts -%}
-            <li class="list-entries">
+            <li class="post-entries">
                 <div class="entry-content">
+                    <p class="date">{{ post.disp-date }}</p>
                     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <p class="desc">{{ post.description }}</p>
                 </div>
             </li>
             {%- endfor -%}

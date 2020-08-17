@@ -11,51 +11,54 @@ permalink: /game-window-01.html
     <title>Game Screen</title>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/game-styles.css">
-    <script src="script/engine-01.js"></script>
-    <script src="script/controller-01.js"></script>
-    <script src="script/game-01.js"></script>
-    <script src="script/display-01.js"></script>
-    <script src="script/main-01.js"></script>
+    <script src="script/game-01.js" defer></script>
+    <script src="script/main-01.js" defer></script>
 </head>
 <body>
     <section class="interface">
-        <main>
-            <h1>Choose Your Deck</h1>
-            <section class="decks">
-                <div class="deck__wrapper">
-                    <div class="deck deck--1" onclick="DeckSelect.setGameStart('d-01')">
-                        <h3 class="deck--1 title">Deck 1</h3>
-                        <div class="deck__text">
-                            <p class="deck--1 desc">desc.</p>
-                        </div>
-                    </div>
-                    <div class="deck deck--2" onclick="DeckSelect.setGameStart('d-02')">
-                        <h3 class="deck--2 title">Deck 2</h3>
-                        <div class="deck__text">
-                            <p class="deck--2 desc">desc.</p>
-                        </div>
-                    </div>
-                    <div class="deck deck--3" onclick="DeckSelect.setGameStart('d-03')">
-                        <h3 class="deck--3 title">Deck 3</h3>
-                        <div class="deck__text">
-                            <p class="deck--3 desc">desc.</p>
-                        </div>
-                    </div>
-                    <div class="deck deck--4" onclick="DeckSelect.setGameStart('d-04')">
-                        <h3 class="deck--4 title">Deck 4</h3>
-                        <div class="deck__text">
-                            <p class="deck--4 desc">desc.</p>
-                        </div>
-                    </div>
-                    <div class="deck deck--5" onclick="DeckSelect.setGameStart('d-05')">
-                        <h3 class="deck--5 title">Deck 5</h3>
-                        <div class="deck__text">
-                            <p class="deck--5 desc">desc.</p>
+
+        <main class="arena">
+
+        </main>
+
+        <div class="card__wrapper">
+            <div class="cards">
+
+                <div class="card card--1">
+                    <img src="card-imgs/card-proton.png" alt="Proton Particle">
+                    <div class="card__content">
+                        <h2 class="card__name">Proton</h2>
+                        <h3 class="card__type">Particle</h3>
+                        <div class="card__text">
+                            <p>This is the proton card.</p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
+
+                <div class="card card--2">
+                    <img src="card-imgs/FP-card-CMS.png" alt="CMS Apparatus">
+                    <div class="card__content">
+                        <h2 class="card__name">CMS</h2>
+                        <h3 class="card__type">Device</h3>
+                        <div class="card__text">
+                            <p>Compact Muon Solenoid</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card--3">
+                    <img src="card-imgs/FP-card-neuralNet.png" alt="neuralNet Concept">
+                    <div class="card__content">
+                        <h2 class="card__name">Neural Network</h2>
+                        <h3 class="card__type">Concept</h3>
+                        <div class="card__text">
+                            <p>This is the neural network card.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </section>
 </body>

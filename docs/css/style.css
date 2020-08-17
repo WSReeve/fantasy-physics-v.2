@@ -115,7 +115,7 @@ main {
 }
 
 .btn__play {
-    display: none;
+    visibility: hidden;
 }
 
 .featured-cards {
@@ -288,7 +288,8 @@ main {
     }
 
     .btn__play {
-        margin: 1rem auto auto;
+        visibility: visible;
+        margin: 3rem auto auto;
         font-size: 2rem;
         background-image: var(--clr-accent-grad);
         padding: 2rem 3rem;
