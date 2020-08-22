@@ -1,14 +1,14 @@
 
 const clock = document.querySelector(".timer");
-const initTime = 10;
+const initTime = 5;
 let time = initTime;
-let runTimer
+let runTimer;
 
 function countDown() {
     clock.innerHTML = `${time}`;
 
     if (time < 1) {
-        clock.innerHTML = `play`;
+        clock.innerHTML = `Play`;
         time = initTime;
         clearInterval(runTimer);
         compareCards();
@@ -26,6 +26,9 @@ clock.addEventListener("click", (event) => {
 const cards = document.querySelectorAll(".card");
 const areas = document.querySelectorAll(".area");
 let playerCard;
+let playerCardContent;
+let playerCardContentType;
+let playerCardType;
 
 
 for(const card of cards) {
@@ -36,7 +39,6 @@ for(const card of cards) {
 for(const area of areas) {
     area.addEventListener('dragover', dragOver);
     area.addEventListener('dragenter', dragEnter);
-    area.addEventListener('dragleave', dragLeave);
     area.addEventListener('drop', dragDrop);
 }
 
@@ -61,9 +63,10 @@ function dragEnter(e) {
     e.preventDefault();
 }
 
-function dragLeave() {
-}
-
 function dragDrop() {
     this.appendChild(playerCard);
+    playerCardContent = playerCard.children[1];
+    playerCardContentType = playerCardContent.children[1];
+    playerCardType = playerCardContentType.innerHTML;
+    console.log("chosen card = " +playerCardType);
 }

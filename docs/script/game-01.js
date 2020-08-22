@@ -3,37 +3,59 @@ const opponentDeck = ['Particle','Device','Concept'];
 
 let opponentCardType;
 
-let playerCardContent = playerCard.children[1];
-let playerCardContentType = playerCardContent.children[1];
+const scoreBoard = document.querySelector('.score');
+let winCounter = 0;
+let lossCounter = 0;
+let drawCounter = 0;
 
-let playerCardType = playerCardContentType.innerHTML;
+function onDraw() {
+    drawCounter++;
+    updateScore();
+    alert(`DRAW NUMBER ${drawCounter}!`);
+}
+function onWin() {
+    winCounter++;
+    updateScore();
+    alert(`WIN NUMBER ${winCounter}!`);
+}
+function onLoss() {
+    lossCounter++;
+    updateScore();
+    alert(`LOSS NUMBER ${lossCounter}!`);
+}
+
+function updateScore() {
+    scoreBoard.innerHTML = `Wins: ${winCounter} | Losses: ${lossCounter} | Ties: ${drawCounter}`;
+}
 
 function chooseRndmCard() {
     let max = opponentDeck.length;
     let cardIndex = Math.floor(Math.random() * Math.floor(max));
     opponentCardType = opponentDeck[cardIndex];
+    console.log(opponentCardType);
 }
 
 function compareCards() {
+    console.log(`${playerCardType} vs ${opponentCardType}`)
     if (playerCardType === opponentCardType) {
-        alert('DRAW');
+        onDraw();
     } else if (playerCardType === "Particle") {
         if (opponentCardType === "Concept") {
-            alert('YOU WIN!');  
+            onWin();
         } else {
-            alert('YOU LOOSE!');
+            onLoss();
         }
     } else if (playerCardType === "Device") {
         if (opponentCardType === "Particle") {
-            alert('YOU WIN!');  
+            onWin(); 
         } else {
-            alert('YOU LOOSE!');
+            onLoss();
         }
     } else if (playerCardType == "Concept") {
         if (opponentCardType === "Device") {
-            alert('YOU WIN!');  
+            onWin();
         } else {
-            alert('YOU LOOSE!');
+            onLoss();
         }
     } 
 }
