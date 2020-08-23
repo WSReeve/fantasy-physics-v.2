@@ -56,7 +56,11 @@ function dragEnd() {
 }
 
 function dragOver(e) {
-    e.preventDefault();
+    if(this.classList.contains('cards')) {
+        e.preventDefault();
+    } else if (this.children.length == 0) {
+        e.preventDefault();
+    }
 }
 
 function dragEnter(e) {
@@ -64,9 +68,15 @@ function dragEnter(e) {
 }
 
 function dragDrop() {
+    if (this.classList.contains('card-area')) {
+        playerCard.classList.add('drug');
+    } else {
+        playerCard.classList.remove('drug');
+    }
     this.appendChild(playerCard);
     playerCardContent = playerCard.children[1];
     playerCardContentType = playerCardContent.children[1];
     playerCardType = playerCardContentType.innerHTML;
     console.log("chosen card = " +playerCardType);
+    clock.innerHTML = `Play`;
 }

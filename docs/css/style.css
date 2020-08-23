@@ -62,6 +62,8 @@ body {
 
 img {
     display: block;
+    height: inherit;
+    width: inherit;
 }
 
 
